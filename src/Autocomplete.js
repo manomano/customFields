@@ -31,8 +31,8 @@ export class Autocomplete extends Component {
     }
 
     console.log("userInput", userInput);
-    //const url = this.props.url + "&" + this.props.parname + "=" + userInput;
-    const url = "https://reqres.in/api/users?page=2";
+    const url = this.props.url + "&" + this.props.parname + "=" + userInput;
+    //const url = "https://reqres.in/api/users?page=2";
     const self = this;
     fetch(url)
       .then(resp => resp.json())
@@ -40,12 +40,12 @@ export class Autocomplete extends Component {
         self.setState(
           {
             activeSuggestion: 0,
-            filteredSuggestions: response.data, //response.geonames,
+            filteredSuggestions: response.geonames, //response.data
             showSuggestions: true,
             userInput: userInput
           },
           () => {
-            console.log("state updated to", this.state);
+            console.log("state updated to", self.state);
           }
         );
       })
@@ -109,7 +109,7 @@ export class Autocomplete extends Component {
             {filteredSuggestions.map((suggestion, index) => {
               return (
                 <div key={"i_" + index} onClick={onClick}>
-                  {suggestion.first_name /*adminName1*/}
+                  {suggestion.adminName1}
                 </div>
               );
             })}
