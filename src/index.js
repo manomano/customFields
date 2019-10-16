@@ -3,7 +3,9 @@ import ReactDOM from "react-dom";
 import DateField from "./customDateField";
 import Autocomplete from "./Autocomplete";
 
+
 import "./styles.css";
+import MapContainer from "./mapField";
 
 function App() {
   return (
@@ -16,6 +18,9 @@ function App() {
           url="https://secure.geonames.org/searchJSON?lang=eng&style=full&type=json&maxRows=10&username=georchestra"
         />
       </div>
+        <div>
+        <MapContainer/>
+        </div>
     </div>
   );
 }
