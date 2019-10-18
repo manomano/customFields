@@ -7,6 +7,15 @@ import ReactDOM from "react-dom";
 import "./styles.css";
 import MapContainer from "./mapField";
 
+const coords = [
+  [43.34647059800127,41.21864926203679],
+  [46.22488856675127,41.21864926203679],
+  [46.22488856675127,42.6730522016756],
+  [43.34647059800127,42.6730522016756],
+  [43.34647059800127,41.21864926203679]
+];
+
+
 function App() {
   return (
     <div className="App">
@@ -19,7 +28,7 @@ function App() {
         {/*/>*/}
       {/*</div>*/}
         <div>
-        <MapContainer/>
+        <MapContainer coords={coords}/>
         </div>
     </div>
   );
